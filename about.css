@@ -1,0 +1,93 @@
+body {
+    font-family: 'Noah: Sans serif';
+    margin: 0;
+    padding: 0;
+    background-image: url(grey.jpg);
+    background-repeat: repeat-y;
+}
+
+header {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);;
+    color: BLACK;
+    padding: 10px 0;
+    text-align: left;
+
+}
+
+nav {
+    background: black;
+    color: #ffffff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.auth-buttons {
+    display: flex;
+}
+
+.auth-buttons .button {
+    color: white;
+    text-decoration: none;
+    background-color: #007BFF;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.auth-buttons .button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    padding: 20px;
+}
+
+.about-section {
+    margin: 20px;
+}
+.about-section h1{
+ color:black;
+
+}
+.about-section h2{
+    color:black;
+   
+   }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: grey;
+}
+.cart-icon {
+    display: inline-block; /* Allows the image to be treated as a block element */
+    text-decoration: none; /* Remove underline from link */
+}
+
+.cart-image {
+    width: 40px; /* Set the width of the cart icon */
+    height: auto; /* Maintain aspect ratio */
+}
+.product {
+    margin: 10px; /* Adjust margin to reduce space between products */
+    text-align: center; /* Center the text under the images */
+}
+
+.thumbnail-small {
+    width: 500px; /* Set a smaller width for additional product images */
+    height: auto; /* Maintain aspect ratio */
+}

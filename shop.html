@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEKUS-MEKUS THRIFT CLOTHES WEBSITE</title>
+    <link rel="stylesheet" href="shop.css">
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function addToCart(product, price) {
+            const existingProduct = cart.find(item => item.product === product);
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cart.push({ product, price, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        
+        }
+
+        function removeFromCart(product) {
+            const existingProduct = cart.find(item => item.product === product);
+            if (existingProduct) {
+                existingProduct.quantity--;
+                if (existingProduct.quantity === 0) {
+                    cart = cart.filter(item => item.product !== product);
+                }
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+
+        function toggleDescription(index) {
+            const description = document.getElementById(`description-${index}`);
+            description.style.display = description.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function confirmLogout() {
+            const confirmation = confirm("Are you sure you want to log out?");
+            if (confirmation) {
+                window.location.href = "login.html";
+            }
+        }
+
+        window.onload = updateCartCount; // Update cart count on page load
+    </script>
+    
+</head>
+<body>
+    <header>
+        <h2>Mekus-Mekus Thrift Shop</h2>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-buttons">
+            <button class="cart-button" onclick="window.location.href='cart.html'">My Cart (<span id="cart-count">0</span>)</button>
+            <a href="#" class="nav-button" onclick="confirmLogout()">Log Out</a>
+        </div>
+    </nav>
+    <div class="products">
+        <div class="product">
+            <img src="1p.jpg" alt="Product 1" onclick="toggleDescription(1)">
+            <h2>Pink Floral Dress</h2>
+            <div id="description-1" class="product-description" style="display: none;">
+                <p>A beautiful floral dress with a fitted bodice and a flowy skirt.
+                 The dress features a delicate floral pattern in shades of pink, red, and green</p>
+                <p>Price: 249</p>
+                <button onclick="addToCart('Product 1', 10)">Add to Cart</button>
+                <button onclick="removeFromCart('Product 1')">-</button>
+                <button onclick="addToCart('Product 1', 10)">+</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="2p.jpg" alt="Product 2" onclick="toggleDescription(2)">
+            <h2>T-shirt</h2>
+            <div id="description-2" class="product-description" style="display: none;">
+                <p>A white, short-sleeved t-shirt featuring a fall-themed design.</p>
+                <p>Price: 140</p>
+                <button onclick="addToCart('Product 2', 20)">Add to Cart</button>
+                <button onclick="removeFromCart('Product 2')">-</button>
+                <button onclick="addToCart('Product 2', 20)">+</button>
+            </div>
+        </div>
+        <div class="product">
+            <img src="3p.jpg" alt="Product 3" onclick="toggleDescription(3)">
+            <h2>Baby Terno Jumpsuits</h2>
+                <div id="description-3" class="product-description" style="display: none;">
+                <p>This adorable baby girl short and shirt terno set is a delightful addition to any little one's wardrobe.
+                     Featuring a charming mix of colors—soft pink, sunny yellow, vibrant blue, and cheerful red</p>
+                <p>Price: 60</p>
+                <button onclick="addToCart('Product 3', 30)">Add to Cart</button>
+                <button onclick="removeFromCart('Product 3')">-</button>
+                <button onclick="addToCart('Product 3', 30)">+</button>
+            </div>
+        </div>
+    <div class="product">
+        <img src="lacoste.jpg" alt="Product 4" onclick="toggleDescription(4)">
+        <h2>Lacoste shirt</h2>
+        <div id="description-4" class="product-description" style="display: none;">
+            <p>White Lacoste Shirt</p>
+            <p>Price: 155</p>
+            <button onclick="addToCart('Product 4', 10)">Add to Cart</button>
+            <button onclick="removeFromCart('Product 4')">-</button>
+            <button onclick="addToCart('Product 4', 10)">+</button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="baby.jpg" alt="Product 5" onclick="toggleDescription(5)">
+        <h2>Baby Treno sando and pants</h2>
+        <div id="description-5" class="product-description" style="display: none;">
+            <p>The baby girl sando and pants terno is a matching outfit set typically made from comfortable materials like cotton or spandex.
+                 It comes in a variety of colors, including: yellow,red,baby blue,mint green,purple and pink</p>
+            <p>Price: 70</p>
+            <button onclick="addToCart('Product 5', 20)">Add to Cart</button>
+            <button onclick="removeFromCart('Product 5')">-</button>
+            <button onclick="addToCart('Product 5', 20)">+</button>
+        </div>
+    </div>
+    <div class="product">
+        <img src="bagpack.jpg" alt="Product 6" onclick="toggleDescription(6)">
+        <h2>Pre-Loved bagpack</h2>
+            <div id="description-6" class="product-description" style="display: none;">
+            <p> This pre-loved blue and grey backpack combines style and functionality, 
+                making it a perfect companion for daily adventures.Also this is imported from usa.</p>
+            <p>Price: 180</p>
+            <button onclick="addToCart('Product 6', 30)">Add to Cart</button>
+            <button onclick="removeFromCart('Product 6')">-</button>
+            <button onclick="addToCart('Product 6', 30)">+</button>
+            </div>
+            </div>
+            <div class="product">
+                <img src="short.jpg" alt="Product 7" onclick="toggleDescription(7)">
+                <h2>Cargo shorts</h2>
+                    <div id="description-7" class="product-description" style="display: none;">
+                    <p>Stay comfortable and ready for anything with our premium cargo shorts. Designed for style and functionality.
+                         Available in a variety of classic colors like khali,green, blue and black</p>
+                    <p>Price: 180</p>
+                    <button onclick="addToCart('Product 7', 30)">Add to Cart</button>
+                    <button onclick="removeFromCart('Product 7')">-</button>
+                    <button onclick="addToCart('Product 7', 30)">+</button>
+                    </div>
+                    </div>
+                    <div class="product">
+                        <img src="offshoulder.jpg" alt="Product 8" onclick="toggleDescription(8)">
+                        <h2>offshoulder dress</h2>
+                            <div id="description-8" class="product-description" style="display: none;">
+                            <p> This pre-loved dresses are best for special occasion, you can wear it and style your self. 
+                                Also this is imported from usa.</p>
+                            <p>Price: 120-160</p>
+                            <button onclick="addToCart('Product 8', 30)">Add to Cart</button>
+                            <button onclick="removeFromCart('Product 8')">-</button>
+                            <button onclick="addToCart('Product 8', 30)">+</button>
+                            </div>
+                            </div>
+                            <div class="product">
+                                <img src="ladiesdress.jpg" alt="Product 9" onclick="toggleDescription(9)">
+                                <h2>Ladies Dress</h2>
+                                <div id="description-9" class="product-description" style="display: none;">
+                                    <p> This pre-loved dresses are perfect for casual outings, office wear, or special events.
+                                         Embrace sustainable fashion and make it yours today</p>
+                                    <p>Price: 120-180</p>
+                                    <button onclick="addToCart('Product 9', 30)">Add to Cart</button>
+                                    <button onclick="removeFromCart('Product ')">-</button>
+                                    <button onclick="addToCart('Product 9', 30)">+</button>
+                                    </div>
+                                    </div>
+                                    <div class="product">
+                                        <img src="dress.jpg" alt="Product 10" onclick="toggleDescription(10)">
+                                        <h2>Formal Dress</h2>
+                                            <div id="description-10" class="product-description" style="display: none;">
+                                            <p> Upgrade your wardrobe while making a positive impact on the planet. Don’t miss the chance to own this stylish and sustainable dress</p>
+                                            <p>Price: 120-160</p>
+                                            <button onclick="addToCart('Product 10', 30)">Add to Cart</button>
+                                            <button onclick="removeFromCart('Product 10')">-</button>
+                                            <button onclick="addToCart('Product 10', 30)">+</button>
+                                            </div>
+                                            </div>
+            </div>
+            <footer>
+                <p>&copy; 2024 MEKUS-MEKUS Thrift Clothes. All rights reserved.</p>
+            </footer>
+        </body>
+        </html>         

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - MEKUS-MEKUS Thrift Clothes</title>
+    <link rel="stylesheet" href="cart.css">
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function displayCart() {
+            const cartContainer = document.getElementById('cart-container');
+            cartContainer.innerHTML = '';
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <span>${item.product} - $${item.price} x ${item.quantity}</span>
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                `;
+                cartContainer.appendChild(cartItem);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        function checkout() {
+            alert('Thank you for your purchase!');
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        window.onload = displayCart;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="cart-container" class="cart-container"></div>
+        <button onclick="checkout()">Buy Now</button>
+        <div id="checkoutForm" style="display:none;">
+            <h2>Checkout</h2>
+            <form id="payment-form">
+                <label for="Name">Name:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+    
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br><br>
+    
+                <label for="paymentMethod">Payment Method:</label><br>
+                <input type="checkbox" id="gcash" name="paymentMethod" value="gcash">
+                <label for="gcash">Gcash</label><br>
+                <input type="checkbox" id="cod" name="paymentMethod" value="cod">
+                <label for="cod">Cash on Delivery</label><br><br>
+                <button type="submit">Checkout</button>
+            </form>
+        </div>
+    
+        <script>
+            function checkout() {
+                document.getElementById("checkoutForm").style.display = "block"; // Show the checkout form
+            }
+    
+            document.getElementById("payment-form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the default form submission
+    
+                // Get form data
+                const phone = document.getElementById("phone").value;
+                const address = document.getElementById("address").value;
+                const paymentMethods = [];
+                if (document.getElementById("gcash").checked) {
+                    paymentMethods.push("Gcash");
+                }
+                if (document.getElementById("cod").checked) {
+                    paymentMethods.push("Cash on Delivery");
+                }
+    
+                // Create an object to store the data
+                const orderData = {
+                    Name:name,
+                    phone: phone,
+                    address: address,
+                    paymentMethods: paymentMethods
+                };
+    
+                // Save the data to local storage
+                localStorage.setItem("orderData", JSON.stringify(orderData));
+    
+                // Optionally, you can redirect to a confirmation page or show a success message
+                alert("Order data saved successfully!");
+                console.log("Order Data:", orderData); // Log the order data for debugging
+            });
+        </script>
+    </div>
+
+</body>
+</html>

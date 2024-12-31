@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Mekus-Mekus Pre-Loved Clothes Shop</title>
+    <link rel="stylesheet" href="contact.css">
+    <script>
+        function confirmLogout() {
+            const confirmation = confirm("Are you sure you want to log out?");
+            if (confirmation) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h2>Mekus-Mekus Thrift Shop</h2>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="about.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="cart.html" class="cart-icon">
+                <img src="yellowcart.png" alt="My Cart" class="cart-image">
+            </a>
+            <a href="#" class="button" onclick="confirmLogout()">Log Out</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Our Contact Information</h2>
+            <p><strong>Address:</strong> Poblacion Tibiao, Public Market, At the left side near the karenderya sections.</p>
+           <p><strong>Facebook:</strong>Mekus Mekus(Rtw Store Tibiao) </p>
+            <p><strong>Email:</strong> contact@thriftclothes.com</p><br><br><br>
+        </div>
+    </div>
+</div>
+</div>
+
+    <footer>
+        <p>&copy; 2024 Thrift Clothes Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>

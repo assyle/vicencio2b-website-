@@ -1,0 +1,102 @@
+/* Body Styling */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image:url(lg.jpg);
+  background-repeat: cover;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+  .hero {
+    position: relative;
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Hide overflow */
+  }
+
+  
+  .form-container {
+    position: relative;
+    z-index: 2; /* In front of the video */
+    background-color: rgba(255, 255, 255, 0.2); /* White background with transparency */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    max-width: 400px; /* Limit width */
+    max-height: 400px;
+    margin: auto; /* Center the form */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+  }
+  
+  h2 {
+    margin: 0 0 20px; /* Space below the title */
+  text-align: center;
+  }
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 50px;
+}
+  /* Label Styling */
+label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  color: black;
+  font-size: 15px;
+}
+
+/* Input Field Styling */
+input[type="text"], 
+input[type="password"] 
+
+{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+
+/* Button Styling */
+button {
+  
+  width: 100%;
+  padding: 12px;
+  background-color: lightblue;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+button:hover {
+  background-color:lightblue;
+}
+/* Error Message Styling */
+#errorMessage {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Show Password Container */
+.show-password {
+  display: flex;
+  align-items: center;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.show-password input[type="checkbox"] {
+  margin-right: 5px;
+ 
+}

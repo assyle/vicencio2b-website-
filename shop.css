@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+    font-family: 'Noah: Sans serif';
+    margin: 0;
+    padding: 0;
+    background-image: url(grey.jpg);
+    background-repeat: repeat-y;
+}
+
+header {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);;
+    color: BLACK;
+    padding: 10px 0;
+    text-align: left;
+}
+
+nav {
+    background: black;
+    color: #ffffff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px; /* Add padding for better click area */
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-button {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    background: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-button {
+    background: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Cart Styles */
+.cart-container {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 60px; /* Adjust based on your layout */
+    width: 300px;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.products-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light gray background color */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}
+
+
+/* Grid layout for products */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 20px; /* Space between grid items */
+}
+
+/* Individual product styling */
+.product {
+    text-align: center; /* Center align product content */
+    padding: 10px;
+    border: 1px solid #ccc; /* Optional: border for each product */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+/* Product images */
+.product img {
+    width: 100%; /* Ensure images fill the grid cell */
+    max-width: 200px; /* Limit image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+    cursor: pointer; /* Pointer cursor for clickable images */
+}
+
+/* Responsive design for medium screens */
+@media (max-width: 1024px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    }
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+    .products {
+        grid-template-columns: 1fr; /* 1 item per row */
+    }
+}
+
+
+
+/* Footer styling */
+footer {
+    background: #35424a;       /* Dark background color */
+    color: #ffffff;            /* White text color */
+    text-align: center;        /* Centered text */
+    padding: 10px 0;           /* Vertical padding */
+    position: relative;
+    bottom: 0;
+    width: 100%;               /* Footer spans full width */
+}

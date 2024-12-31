@@ -1,0 +1,157 @@
+body {
+    font-family: 'Noah: Sans serif';
+    margin: 0;
+    padding: 0;
+    background-image: url(grey.jpg);
+    background-repeat: repeat-y;
+}
+
+header {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);;
+    color: BLACK;
+    padding: 10px 0;
+    text-align: left;
+}
+
+nav {
+    background: black;
+    color: #ffffff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-button {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 10px;
+    margin-left: 10px;
+    background: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+nav a:hover {
+    background-color: #555;
+}
+
+.auth-buttons {
+    display: flex; /* Added to align auth buttons in a row */
+}
+
+.auth-buttons .button {
+    color: #fff;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: #007BFF;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between buttons */
+}
+
+.auth-buttons .button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.container {
+    padding: 2rem;
+}
+
+.contact-form {
+    background: (255, 255, 255, 0.3); /* Semi-transparent white */
+    border-radius: 15px; /* Rounded corners */
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Optional border for glass effect */
+}
+
+.contact-form h2 {
+    margin-top: 0;
+    color: black /* Change text color for better visibility */
+}
+
+.contact-form label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+    color: black; /* Change label color for better visibility */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners for inputs */
+    background: rgba(255, 255, 255, 0.8); /* Slightly more opaque for inputs */
+}
+
+.contact-form button {
+    background-color: #333;
+    color:#ccc;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded corners for button */
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+.contact-info {
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    padding: 2rem;
+    border: 1px solid #ccc;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.cart-icon {
+    display: inline-block; /* Allows the image to be treated as a block element */
+    text-decoration: none; /* Remove underline from link */
+}
+
+.cart-image {
+    width: 40px; /* Set the width of the cart icon */
+    height: auto; /* Maintain aspect ratio */
+}
